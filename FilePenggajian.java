@@ -57,9 +57,11 @@ public class FilePenggajian {
                     case 1:
                         System.out.print("Masukkan NIK: ");
                         int nomorNIK = scanner.nextInt();
+                        
 
                         System.out.print("Masukkan nama: ");
                         String namaKaryawan = scanner.nextLine();
+                        scanner.nextLine();
 
                         System.out.print("Masukkan divisi: ");
                         String divisiKaryawan = scanner.nextLine();
@@ -75,6 +77,7 @@ public class FilePenggajian {
                         storageDataKaryawan.put(nomorNIK, karyawanBaru);
 
                         System.out.println("Berhasil menambahkan karyawan baru bernama '" + namaKaryawan + "' ke dalam data.");
+                        
                         break;
                 }
             }
