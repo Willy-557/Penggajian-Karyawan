@@ -2,7 +2,32 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+class Karyawan {
+    String nama;
+    String divisi;
+    double gajiPokok;
+    int jamLembur;
 
+    public Karyawan (String nama, String divisi, double gajiPokok, int jamLembur){
+        this.nama = nama;
+        this.divisi = divisi;
+        this.gajiPokok = gajiPokok;
+    }
+
+    double hitungGajiTotal() {
+        double hasil = gajiPokok + (jamLembur * 50_000);
+        return hasil;
+    }
+
+    void cekStatusKinerja() {
+        if (jamLembur > 10) {
+            System.out.println("RAJIN");
+        }
+        else {
+            System.out.println("NORMAL");
+        }
+    }
+}
 
 public class FilePenggajian {
     public static void main(String[] args) {
