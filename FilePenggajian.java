@@ -14,17 +14,17 @@ class Karyawan {
         this.gajiPokok = gajiPokok;
     }
 
-    double hitungGajiTotal() {
+    public double hitungGajiTotal() {
         double hasil = gajiPokok + (jamLembur * 50_000);
         return hasil;
     }
 
     void cekStatusKinerja() {
         if (jamLembur > 10) {
-            System.out.println("RAJIN");
+            System.out.println("Status Kerja : RAJIN");
         }
         else {
-            System.out.println("NORMAL");
+            System.out.println("Status Kerja : NORMAL");
         }
     }
 
@@ -89,11 +89,13 @@ public class FilePenggajian {
                     case 2:
                         System.out.print("Masukkan NIK Karyawan : ");
                         int NikKaryawan = scanner.nextInt();
-
+                        
                         if (storageDataKaryawan.containsKey(NikKaryawan)){
                             Karyawan hasilPencarian = storageDataKaryawan.get(NikKaryawan);
                             System.out.println("Berikut data karyawan yang dicari : \n");
                             hasilPencarian.tampilkanInfoKaryawan();
+                            System.out.println("Gaji bersih : " + hasilPencarian.hitungGajiTotal());           
+                            hasilPencarian.cekStatusKinerja();             
                         }
                         else {
                             System.out.println("Nomor '" + NikKaryawan + "' belum terdaftar di sistem!");
