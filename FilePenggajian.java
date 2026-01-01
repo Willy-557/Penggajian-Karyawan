@@ -27,12 +27,18 @@ class Karyawan {
             System.out.println("NORMAL");
         }
     }
+
+    void tampilkanInfoKaryawan() {
+        System.err.println("Nama : " + this.nama);
+        System.err.println("Nama : " + this.divisi);
+        System.err.println("Nama : " + this.gajiPokok);
+    }
 }
 
 public class FilePenggajian {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        HashMap<Integer, Karyawan> storageDataKaryawan = new HashMap<>();
+        HashMap<String, Karyawan> storageDataKaryawan = new HashMap<>();
 
         while (true) {
             System.out.println("=== Penggajian Karyawan ===");
@@ -57,8 +63,8 @@ public class FilePenggajian {
                     case 1:
                         System.out.print("Masukkan NIK: ");
                         int nomorNIK = scanner.nextInt();
+                        scanner.nextLine();
                         
-
                         System.out.print("Masukkan nama: ");
                         String namaKaryawan = scanner.nextLine();
                         scanner.nextLine();
@@ -79,6 +85,19 @@ public class FilePenggajian {
                         System.out.println("Berhasil menambahkan karyawan baru bernama '" + namaKaryawan + "' ke dalam data.");
                         
                         break;
+
+                    case 2:
+                        System.out.print("Masukkan NIK Karyawan : ");
+                        int NikKaryawan = scanner.nextInt();
+
+                        if (storageDataKaryawan.containsKey(NikKaryawan)){
+                            Karyawan hasilPencarian = storageDataKaryawan.get(NikKaryawan);
+                            System.out.println("Berikut data karyawan yang dicari : \n");
+                            hasilPencarian.tampilkanInfoKaryawan();
+                        }
+                        else {
+                            System.out.println("Nomor '" + NikKaryawan + "' belum terdaftar di sistem!");
+                        }
                 }
             }
         }
