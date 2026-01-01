@@ -38,7 +38,7 @@ class Karyawan {
 public class FilePenggajian {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        HashMap<String, Karyawan> storageDataKaryawan = new HashMap<>();
+        HashMap<Integer, Karyawan> storageDataKaryawan = new HashMap<>();
 
         while (true) {
             System.out.println("=== Penggajian Karyawan ===");
