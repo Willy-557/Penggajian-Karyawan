@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.HashMap;
 
 class Karyawan {
@@ -30,8 +30,8 @@ class Karyawan {
 
     void tampilkanInfoKaryawan() {
         System.err.println("Nama : " + this.nama);
-        System.err.println("Nama : " + this.divisi);
-        System.err.println("Nama : " + this.gajiPokok);
+        System.err.println("Divisi : " + this.divisi);
+        System.err.println("Gaji Pokok : " + this.gajiPokok);
     }
 }
 
@@ -41,7 +41,7 @@ public class FilePenggajian {
         HashMap<Integer, Karyawan> storageDataKaryawan = new HashMap<>();
 
         while (true) {
-            System.out.println("=== Penggajian Karyawan ===");
+            System.out.println("\n=== Penggajian Karyawan ===");
             System.out.println("1. Tambah data karyawan");
             System.out.println("2. Cetak Slip Gaji");
             System.out.println("3. Keluar");
@@ -63,11 +63,11 @@ public class FilePenggajian {
                     case 1:
                         System.out.print("Masukkan NIK: ");
                         int nomorNIK = scanner.nextInt();
-                        scanner.nextLine();
                         
+                        scanner.nextLine();
                         System.out.print("Masukkan nama: ");
                         String namaKaryawan = scanner.nextLine();
-                        scanner.nextLine();
+                        // scanner.nextLine();
 
                         System.out.print("Masukkan divisi: ");
                         String divisiKaryawan = scanner.nextLine();
@@ -78,12 +78,12 @@ public class FilePenggajian {
                         System.out.print("Masukkan Jam Lembur: ");
                         int jamLemburKaryawan = scanner.nextInt();
 
+                        System.out.println("Berhasil menambahkan karyawan baru bernama '" + namaKaryawan + "' ke dalam data.");
+
                         Karyawan karyawanBaru = new Karyawan(namaKaryawan, divisiKaryawan, gajiPokokKaryawan, jamLemburKaryawan);
 
                         storageDataKaryawan.put(nomorNIK, karyawanBaru);
 
-                        System.out.println("Berhasil menambahkan karyawan baru bernama '" + namaKaryawan + "' ke dalam data.");
-                        
                         break;
 
                     case 2:
