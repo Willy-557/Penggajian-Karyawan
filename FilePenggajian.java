@@ -14,7 +14,7 @@ class Karyawan {
         this.gajiPokok = gajiPokok;
     }
 
-    public double hitungGajiTotal() {
+    double hitungGajiTotal() {
         double hasil = gajiPokok + (jamLembur * 50_000);
         return hasil;
     }
@@ -32,6 +32,7 @@ class Karyawan {
         System.err.println("Nama : " + this.nama);
         System.err.println("Divisi : " + this.divisi);
         System.err.println("Gaji Pokok : " + this.gajiPokok);
+        System.err.println("Gaji Bersih : " + this.hitungGajiTotal());
     }
 }
 
@@ -89,12 +90,12 @@ public class FilePenggajian {
                     case 2:
                         System.out.print("Masukkan NIK Karyawan : ");
                         int NikKaryawan = scanner.nextInt();
-                        
+
                         if (storageDataKaryawan.containsKey(NikKaryawan)){
                             Karyawan hasilPencarian = storageDataKaryawan.get(NikKaryawan);
                             System.out.println("Berikut data karyawan yang dicari : \n");
                             hasilPencarian.tampilkanInfoKaryawan();
-                            System.out.println("Gaji bersih : " + hasilPencarian.hitungGajiTotal());           
+                            // System.out.println("Gaji bersih : " + hasilPencarian.hitungGajiTotal());           
                             hasilPencarian.cekStatusKinerja();             
                         }
                         else {
