@@ -12,6 +12,7 @@ class Karyawan {
         this.nama = nama;
         this.divisi = divisi;
         this.gajiPokok = gajiPokok;
+        this.jamLembur = jamLembur;
     }
 
     double hitungGajiTotal() {
@@ -29,10 +30,10 @@ class Karyawan {
     }
 
     void tampilkanInfoKaryawan() {
-        System.err.println("Nama : " + this.nama);
-        System.err.println("Divisi : " + this.divisi);
-        System.err.println("Gaji Pokok : " + this.gajiPokok);
-        System.err.println("Gaji Bersih : " + this.hitungGajiTotal());
+        System.out.println("Nama : " + this.nama);
+        System.out.println("Divisi : " + this.divisi);
+        System.out.println("Gaji Pokok : " + this.gajiPokok);
+        System.out.println("Gaji Bersih : " + this.hitungGajiTotal());
     }
 }
 
